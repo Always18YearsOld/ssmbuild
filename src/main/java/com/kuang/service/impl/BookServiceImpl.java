@@ -14,7 +14,12 @@ import java.util.List;
 @Service
 public class BookServiceImpl implements com.kuang.service.BookService {
 
+    @Autowired
     private BookMapper bookMapper;
+
+    public void setBookMapper(BookMapper bookMapper) {
+        this.bookMapper = bookMapper;
+    }
 
     @Override
     public int addBook(Books books) {

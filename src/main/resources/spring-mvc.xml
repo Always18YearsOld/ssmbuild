@@ -16,7 +16,7 @@
     <!--扫描包：controller-->
     <context:component-scan base-package="com.kuang.controller"/>
     <!--视图解析器-->
-    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" id="internalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/jsp/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
