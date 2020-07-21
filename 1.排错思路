@@ -9,3 +9,5 @@
 4、SpringMVC，整合的时候没调用到我们的service层的bean
     4.1、applicationContext.xml没有注入bean
     4.2、web.xml我们也绑定过配置文件！发现问题，我们配置的spring-mvc.xml这里确实没有service的bean，所以报空指针
+
+错误真是太多了，mapper下的interface名字要和xml名字一样，否则也找不到

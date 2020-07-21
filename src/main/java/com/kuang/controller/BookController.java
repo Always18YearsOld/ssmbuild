@@ -28,6 +28,20 @@ public class BookController {
         List<Books> books = bookService.queryAllBooks();
         model.addAttribute("list", books);
         return "allBook";
+    }
+
+
+    //跳转到增加书籍页面
+    @RequestMapping("/toAddBook")
+    public String toAddBook(){
+        return "toAddBook";
+    }
+
+    @RequestMapping("/addBook")
+    public String addBook(Books books){
+        System.out.println(books);
+        bookService.addBook(books);
+        return "redirect:/book/allBook";
 
     }
 }
