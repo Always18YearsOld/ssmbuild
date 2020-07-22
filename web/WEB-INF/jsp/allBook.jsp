@@ -46,10 +46,15 @@
                         <tbody>
                             <c:forEach var="book" items="${list}">
                                 <tr>
-                                    <td>${book.bookID}</td>
+                                    <td>${book.bookId}</td>
                                     <td>${book.bookName}</td>
                                     <td>${book.bookCounts}</td>
                                     <td>${book.detail}</td>
+                                    <td>
+                                        <a href="${pageContext.request.contextPath}/book/toUpdateBook?id=${book.bookId}">修改</a>
+                                        &nbsp; | &nbsp;
+                                        <a href="${pageContext.request.contextPath}/book/deleteBook?id=${book.bookId}">删除</a>
+                                    </td>
                                 </tr>
                             </c:forEach>
                         </tbody>
