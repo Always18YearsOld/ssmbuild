@@ -24,4 +24,6 @@ public interface BookMapper {
 
     //查询全部书
     List<Books> queryAllBooks();
+
+    List<Books> queryBookByName(String bookName);
 }

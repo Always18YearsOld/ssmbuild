@@ -63,10 +63,18 @@ public class BookController {
     }
 
 
-    //修改书籍的请求
+    //删除书籍
     @RequestMapping("/deleteBook")
     public String deleteBook(Integer id){
         bookService.deleteBookById(id);
         return "redirect:/book/allBook";
+    }
+
+    //查询书籍
+    @RequestMapping("/queryBook")
+    public String queryBook(String queryBookName,Model model){
+        List<Books> books = bookService.queryBookByName(queryBookName);
+        model.addAttribute("bookList",books);
+        return "selectedBooks";
     }
 }

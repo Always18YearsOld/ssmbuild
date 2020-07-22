@@ -2,8 +2,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: Administrator
-  Date: 2020/7/21
-  Time: 13:11
+  Date: 2020/7/22
+  Time: 11:40
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -20,23 +20,8 @@
                 <div class="col-md-12 column">
                     <div class="page-header">
                         <h1>
-                            <small>书籍列表 ————— 显示所有书籍</small>
+                            <small>书籍列表 ————— 搜索到的</small>
                         </h1>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4 column">
-                        <%--toAddBook--%>
-                        <a class="btn btn-primary" href="${pageContext.request.contextPath}/book/toAddBook">新增书籍</a>
-                    </div>
-                    <div class="col-md-4 column"></div>
-                    <div class="col-md-4 column">
-                        <%--查询书籍--%>
-                        <form class="form-inline" action="${pageContext.request.contextPath}/book/queryBook"
-                              method="post">
-                            <input type="text" name="queryBookName" class="form-control" placeholder="请输入要查询的书籍名称">
-                            <input type="submit" value="查询" class="btn btn-primary">
-                        </form>
                     </div>
                 </div>
             </div>
@@ -53,17 +38,12 @@
                         </thead>
                         <%--书籍从数据库中查询出来，从这个list中遍历出来：foreach--%>
                         <tbody>
-                        <c:forEach var="book" items="${list}">
+                        <c:forEach var="book" items="${bookList}">
                             <tr>
                                 <td>${book.bookId}</td>
                                 <td>${book.bookName}</td>
                                 <td>${book.bookCounts}</td>
                                 <td>${book.detail}</td>
-                                <td>
-                                    <a href="${pageContext.request.contextPath}/book/toUpdateBook?id=${book.bookId}">修改</a>
-                                    &nbsp; | &nbsp;
-                                    <a href="${pageContext.request.contextPath}/book/deleteBook?id=${book.bookId}">删除</a>
-                                </td>
                             </tr>
                         </c:forEach>
                         </tbody>

@@ -45,4 +45,9 @@ public class BookServiceImpl implements com.kuang.service.BookService {
     public List<Books> queryAllBooks() {
         return bookMapper.queryAllBooks();
     }
+
+    @Override
+    public List<Books> queryBookByName(String bookName) {
+        return bookMapper.queryBookByName(bookName);
+    }
 }
